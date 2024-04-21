@@ -3,13 +3,50 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "author": "",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "electron:start": "nodemon --exec electron . --dev",
+    "builder": "electron-builder",
+    "publish": "electron-builder -p always"
+  },
+  "build": {
+    "appId": "com.vaisak.automatic-updation",
+    "productName": "automatic updation",
+    "publish": {
+      "provider": "github",
+      "owner": "Vaisak-P",
+      "repo": "https://github.com/Vaisak-P/automatic-updation",
+      "private": false
+    },
+    "directories": {
+      "output": "releases"
+    },
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "publish": [
+        "github"
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "perMachine": true
+    },
+    "mac": {},
+    "linux": {},
+    "forceCodeSigning": false
   },
   "keywords": [],
-  "author": "",
   "license": "ISC",
   "devDependencies": {
-    "electron": "^30.0.1"
+    "electron": "^30.0.1",
+    "electron-builder": "^24.13.3"
+  },
+  "dependencies": {
+    "electron-updater": "^6.1.8",
+    "nodemon": "^3.1.0"
   }
 }
