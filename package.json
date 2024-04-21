@@ -1,9 +1,9 @@
 {
   "name": "automatic-updation",
-  "version": "1.0.0",
-  "description": "",
+  "version": "3.0.0",
+  "description": "A description of your project",
   "main": "index.js",
-  "author": "",
+  "author": "Your Name <your.email@example.com>",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "electron:start": "nodemon --exec electron . --dev",
@@ -16,8 +16,7 @@
     "publish": {
       "provider": "github",
       "owner": "Vaisak-P",
-      "repo": "https://github.com/Vaisak-P/automatic-updation",
-      "private": false
+      "repo": "automatic-updation"
     },
     "directories": {
       "output": "releases"
